@@ -1,0 +1,24 @@
+{
+  "name": "digitalstars/daemon",
+  "description": "Library for easy work and create PHP Daemons",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "ZeRoX",
+      "email": "as234zx15@yandex.ru"
+    },
+    {
+      "name": "Runnin",
+      "email": "mr.kirilll12@mail.ru"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "DigitalStars\\daemon\\": "src/"
+    }
+  }
+}
