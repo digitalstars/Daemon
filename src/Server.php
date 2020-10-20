@@ -3,6 +3,7 @@
 
 namespace DigitalStars\Daemon;
 
+require_once __DIR__ . "/config_daemon.php";
 
 class Server {
     private $is_multi_thread = IS_MULTI_THREAD;
