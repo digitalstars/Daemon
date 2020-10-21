@@ -20,6 +20,7 @@ class Client {
 
     public function errorHandler($func) {
         $this->error_func = $func;
+        return $this;
     }
 
     private function error($error) {
