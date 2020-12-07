@@ -222,15 +222,21 @@ class Server {
     }
 
     private function error($msg) {
+        if (!is_array($msg))
+            $msg = ["ERROR_DAEMON", $msg, null, null, null];
         if (is_callable($this->error_func)) {
             $this->wait();
-            if (!is_array($msg))
-                $msg = ["ERROR_DAEMON", $msg, null, null, null];
             $this->processingJob($this->error_func, $msg, true);
         } else {
             if ($this->pid == getmypid())
                 unlink($this->pid_file);
-            throw new \Exception($msg);
+            if (!empty($msg[4]) and $msg[4] instanceof \Throwable)
+                throw new \Exception($msg[4]);
+            else
+                throw new \Exception("Error: $msg[0]\n" .
+                    "Message: $msg[1]\n" .
+                    (!empty($msg[2]) ? "File: $msg[2]\n" : '') .
+                    (!empty($msg[3]) ? "Line: $msg[3]\n" : '') );
         }
         return 1;
     }
