@@ -30,7 +30,7 @@ class Client {
             throw new \Exception($error);
     }
 
-    public function send($module, $msg) {
+    public function send($module, $msg = []) {
         if (!$this->is_init) {
             try {
                 $this->resource = msg_get_queue($this->id_resource);

@@ -94,7 +94,7 @@ class Server {
         return $this;
     }
 
-    private function maxSize($size) {
+    public function maxSize($size) {
         $this->max_size = $size;
         return $this;
     }
