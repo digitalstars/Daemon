@@ -7,6 +7,10 @@
 <img src="https://img.shields.io/github/license/digitalstars/Daemon" alt="License">
 </p> 
 
+#### Комьюнити:
+[Беседа ВК (Помощь)](https://vk.me/join/AJQ1dzQRUQxtfd7zSm4STOmt) |
+--- | 
+
 ### Почему SimpleDaemon?
 
 * Легковесность — Daemon не тянет за собой кучу тяжёлых библиотек, в зависимостях только модули PHP, необходимые для
