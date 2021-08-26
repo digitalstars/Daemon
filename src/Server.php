@@ -72,6 +72,9 @@ class Server {
 
             set_error_handler($error_handler);
         }
+        $current_pid = $this->isActive();
+        if ($current_pid && !posix_kill($current_pid, 0))
+            unlink($this->pid_file);
     }
 
     public function errorHandler($func) {
